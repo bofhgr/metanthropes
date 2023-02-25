@@ -13,7 +13,7 @@
   ],
   "author": "qp",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
