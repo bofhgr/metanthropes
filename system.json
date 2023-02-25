@@ -2,7 +2,7 @@
   "id": "metanthropes",
   "title": "Metanthropes",
   "description": "This is the official Metanthropes RPG system for FoundryVTT",
-  "version": "2023.02.25.003",
+  "version": "2023.02.25.006",
   "compatibility": {
     "minimum": 10,
     "verified": "10.287",
@@ -31,8 +31,8 @@
   "primaryTokenAttribute": "life",
   "secondaryTokenAttribute": "destiny",
   "url": "https://metanthropes.com",
-  "manifest": "https://github.com/bofhgr/metanthropes/blob/master/system.json",
-  "download": "https://github.com/bofhgr/metanthropes/archive/refs/tags/v2023.02.25.003.zip",
+  "manifest": "https://github.com/bofhgr/metanthropes/blob/stable/system.json",
+  "download": "https://github.com/bofhgr/metanthropes/archive/refs/tags/2023.02.25.006.zip",
   "license": "https://github.com/bofhgr/metanthropes/blob/master/LICENSE.txt",
   "changelog": "https://github.com/bofhgr/metanthropes/blob/master/CHANGELOG.md"
 }
