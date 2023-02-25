@@ -31,7 +31,7 @@
   "primaryTokenAttribute": "life",
   "secondaryTokenAttribute": "destiny",
   "url": "https://metanthropes.com",
-  "manifest": "https://github.com/bofhgr/metanthropes/tree/stable/system.json",
+  "manifest": "https://github.com/bofhgr/metanthropes/blob/stable/system.json",
   "download": "https://github.com/bofhgr/metanthropes/archive/refs/tags/2023.02.25.005.zip",
   "license": "https://github.com/bofhgr/metanthropes/blob/master/LICENSE.txt",
   "changelog": "https://github.com/bofhgr/metanthropes/blob/master/CHANGELOG.md"
