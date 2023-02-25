@@ -1,0 +1,50 @@
+{
+  // "METANTHROPES.AbilityStr": "Strength",
+  // "METANTHROPES.AbilityCon": "Constitution",
+  // "METANTHROPES.AbilityDex": "Dexterity",
+  // "METANTHROPES.AbilityInt": "Intelligence",
+  // "METANTHROPES.AbilityWis": "Wisdom",
+  // "METANTHROPES.AbilityCha": "Charisma",
+  // 
+  // "METANTHROPES.AbilityStrAbbr": "str",
+  // "METANTHROPES.AbilityConAbbr": "con",
+  // "METANTHROPES.AbilityDexAbbr": "dex",
+  // "METANTHROPES.AbilityIntAbbr": "int",
+  // "METANTHROPES.AbilityWisAbbr": "wis",
+  // "METANTHROPES.AbilityChaAbbr": "cha",
+
+  "METANTHROPES.CharacteristicBody": "Body",
+  "METANTHROPES.CharacteristicMind": "Mind",
+  "METANTHROPES.CharacteristicSoul": "Soul",
+
+  "METANTHROPES.StatPow": "Power",
+  "METANTHROPES.StatEnd": "Endurance",
+  "METANTHROPES.StatRef": "Reflexes",
+  "METANTHROPES.StatPer": "Perception",
+  "METANTHROPES.StatMan": "Manipulation",
+  "METANTHROPES.StatCre": "Creativity",
+  "METANTHROPES.StatWil": "Willpower",
+  "METANTHROPES.StatCon": "Consciousness",
+  "METANTHROPES.StatAwa": "Awareness",
+
+  "METANTHROPES.CharacteristicBodyAbbr": "Body",
+  "METANTHROPES.CharacteristicMindAbbr": "Mind",
+  "METANTHROPES.CharacteristicSoulAbbr": "Soul",
+
+  "METANTHROPES.StatPowAbbr": "pow",
+  "METANTHROPES.StatEndAbbr": "end",
+  "METANTHROPES.StatRefAbbr": "ref",
+  "METANTHROPES.StatPerAbbr": "per",
+  "METANTHROPES.StatManAbbr": "man",
+  "METANTHROPES.StatCreAbbr": "cre",
+  "METANTHROPES.StatWilAbbr": "wil",
+  "METANTHROPES.StatConAbbr": "con",
+  "METANTHROPES.StatAwaAbbr": "awa",
+
+  "METANTHROPES.EffectCreate": "Create Effect",
+  "METANTHROPES.EffectToggle": "Toggle Effect",
+  "METANTHROPES.EffectEdit": "Edit Effect",
+  "METANTHROPES.EffectDelete": "Delete Effect",
+
+  "METANTHROPES.Add": "Add"
+}
