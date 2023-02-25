@@ -34,7 +34,7 @@
   "secondaryTokenAttribute": "destiny",
   "url": "https://metanthropes.com",
   "manifest": "https://github.com/bofhgr/metanthropes/blob/stable/system.json",
-  "download": "https://github.com/bofhgr/metanthropes/archive/refs/tags/1.2.5.zip",
+  "download": "https://github.com/bofhgr/metanthropes/archive/refs/tags/1.2.7.zip",
   "license": "https://github.com/bofhgr/metanthropes/blob/master/LICENSE.txt",
   "changelog": "https://github.com/bofhgr/metanthropes/blob/master/CHANGELOG.md"
 }
