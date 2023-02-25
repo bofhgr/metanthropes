@@ -49,9 +49,9 @@ export class MetanthropesActor extends Actor {
     const systemData = actorData.system;
 
     // Loop through ability scores, and add their modifiers to our sheet output.
-    // qp for (let [key, ability] of Object.entries(systemData.abilities)) {
-      // Calculate the modifier using d20 rules.
-      //qp ability.mod = Math.floor((ability.value - 10) / 2);
+    for (let [key, stat] of Object.entries(systemData.stats)) {
+    // Calculate the modifier using d20 rules. qp this could be how to add bodyetc to stats
+    stat.current = stat.value + 50;
     }
   }
 
@@ -87,8 +87,8 @@ export class MetanthropesActor extends Actor {
 
     // Copy the ability scores to the top level, so that rolls can use
     // formulas like `@str.mod + 4`.
-    if (data.abilities) {
-      for (let [k, v] of Object.entries(data.abilities)) {
+    if (data.stats) {
+      for (let [k, v] of Object.entries(data.stats)) {
         data[k] = foundry.utils.deepClone(v);
       }
     }

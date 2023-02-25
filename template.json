@@ -6,7 +6,7 @@
         "life": {
           "value": 100,
           "min": 0,
-          "max": "100 + @end"
+          "max": "100 + 50"
         },
         "destiny": {
           "value": 20,
