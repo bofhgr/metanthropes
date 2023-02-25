@@ -68,8 +68,8 @@ export class MetanthropesActorSheet extends ActorSheet {
    */
   _prepareCharacterData(context) {
     // Handle ability scores.
-    for (let [k, v] of Object.entries(context.system.abilities)) {
-      v.label = game.i18n.localize(CONFIG.METANTHROPES.abilities[k]) ?? k;
+    for (let [k, v] of Object.entries(context.system.stats)) {
+      v.label = game.i18n.localize(CONFIG.METANTHROPES.stats[k]) ?? k;
     }
   }
 
@@ -90,11 +90,7 @@ export class MetanthropesActorSheet extends ActorSheet {
       2: [],
       3: [],
       4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: []
+      5: []
     };
 
     // Iterate through items, allocating to containers
@@ -215,7 +211,7 @@ export class MetanthropesActorSheet extends ActorSheet {
 
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
-      let label = dataset.label ? `[ability] ${dataset.label}` : '';
+      let label = dataset.label ? `[stat] ${dataset.label}` : '';
       let roll = new Roll(dataset.roll, this.actor.getRollData());
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
