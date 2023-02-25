@@ -6,7 +6,8 @@ This is the official Metanthropes RPG system for Foundry VTT.
 
 ## Based off asacolips boilerplate template for Foundry VTT.
 
-This is all new to me lol
+For the original work please check out https://gitlab.com/asacolips-projects/foundry-mods/boilerplate
+Using this as a template for Metanthropes RPG as we learn the ropes of FoundryVTT
 
 ### Tutorial
 
