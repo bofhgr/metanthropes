@@ -224,12 +224,12 @@
 }
 
 /* Styles limited to metanthropes sheets */
-.metanthropes {
+/* .metanthropes { */
   /* ----------------------------------------- */
   /*  Items Lists                              */
   /* ----------------------------------------- */
   /* Example style for Metanthropes (can be removed if not needed) */
-}
+/* } */
 .metanthropes .item-form {
   font-family: "Roboto", sans-serif;
 }

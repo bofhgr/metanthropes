@@ -29,7 +29,7 @@
   "socket": false,
   "initiative": "1d100",
   "gridDistance": 2,
-  "gridUnits": "m",
+  "gridUnits": "mt",
   "primaryTokenAttribute": "life",
   "secondaryTokenAttribute": "destiny",
   "url": "https://metanthropes.com",
