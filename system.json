@@ -2,7 +2,7 @@
   "id": "metanthropes",
   "title": "Metanthropes",
   "description": "This is the official Metanthropes RPG system for FoundryVTT",
-  "version": "1.2.7",
+  "version": "1.3.0",
   "compatibility": {
     "minimum": 10,
     "verified": "10.291",
@@ -12,11 +12,15 @@
     {
       "name": "qp",
       "email": "qp.wormholes@gmail.com",
+      "reddit": "/u/q---p",
       "discord": "@qp#8888"
+    },
+    {
+      "name": "bofhgr"
     }
   ],
-  "esmodules": [ "module/metanthropes.mjs" ],
-  "styles": [ "css/metanthropes.css" ],
+  "esmodules": [ "./module/metanthropes.mjs" ],
+  "styles": [ "./css/metanthropes.css" ],
   "scripts": [],
   "packs": [],
   "languages": [
@@ -34,7 +38,7 @@
   "secondaryTokenAttribute": "destiny",
   "url": "https://metanthropes.com",
   "manifest": "https://github.com/bofhgr/metanthropes/blob/stable/system.json",
-  "download": "https://github.com/bofhgr/metanthropes/archive/refs/tags/1.2.7.zip",
+  "download": "https://github.com/bofhgr/metanthropes/archive/refs/tags/1.2.8.zip",
   "license": "https://github.com/bofhgr/metanthropes/blob/master/LICENSE.txt",
   "changelog": "https://github.com/bofhgr/metanthropes/blob/master/CHANGELOG.md"
 }
