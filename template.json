@@ -6,8 +6,7 @@
         "life": {
           "value": 100,
           "min": 0,
-          // "max": 100
-          "max": "100 + @endurance"
+          "max": "100 + @end"
         },
         "destiny": {
           "value": 20,
@@ -24,23 +23,32 @@
           "value": 1
         }
       },
-      "abilities": {
-        "str": {
+      "stats": {
+        "pow": {
           "value": 10
         },
-        "dex": {
+        "ref": {
+          "value": 10
+        },
+        "end": {
+          "value": 10
+        },
+        "per": {
+          "value": 10
+        },
+        "man": {
+          "value": 10
+        },
+        "cre": {
+          "value": 10
+        },
+        "wil": {
           "value": 10
         },
         "con": {
           "value": 10
         },
-        "int": {
-          "value": 10
-        },
-        "wis": {
-          "value": 10
-        },
-        "cha": {
+        "awa": {
           "value": 10
         }
       }
@@ -61,7 +69,7 @@
       "templates": ["base"],
       "quantity": 1,
       "weight": 0,
-      "formula": "d100 + @str.mod + ceil(@lvl / 2)"
+      "formula": "d100"
     },
     "feature": {
       "templates": ["base"]
