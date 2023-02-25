@@ -1,6 +1,6 @@
 {
   "name": "metanthropes",
-  "version": "1.2.3",
+  "version": "1.2.7",
   "description": "CSS compiler for the Metanthropes system",
   "scripts": {
     "build": "gulp build",
