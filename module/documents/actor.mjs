@@ -27,6 +27,11 @@ export class MetanthropesActor extends Actor {
    * (such as ability modifiers rather than ability scores) and should be
    * available both inside and outside of character sheets (such as if an actor
    * is queried and has a roll executed directly from it).
+   * qp notes
+   * ==========
+   * this is where we add the body etc to the stats
+   * here we should also add the modifiers see above
+   * copilot go?
    */
   prepareDerivedData() {
     const actorData = this;
@@ -51,6 +56,7 @@ export class MetanthropesActor extends Actor {
     // Loop through ability scores, and add their modifiers to our sheet output.
     for (let [key, stat] of Object.entries(systemData.stats)) {
     // Calculate the modifier using d20 rules. qp this could be how to add bodyetc to stats
+    //den to exei parei mallon kati allo paizei
     stat.current = stat.value + 50;
     }
   }

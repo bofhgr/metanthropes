@@ -38,10 +38,12 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="characteristics">Characteristics</a>
-    <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="items">Items</a>
     <a class="item" data-tab="metapowers">Metapowers</a>
-    <a class="item" data-tab="effects">Effects</a>
+    <a class="item" data-tab="metapowers">Combos</a>
+    <a class="item" data-tab="items">Fake Possessions</a>
+    <a class="item" data-tab="effects">Fake Buffs</a>
+    <a class="item" data-tab="effects">Fake Conditions</a>
+    <a class="item" data-tab="description">Information rename</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -97,12 +99,12 @@
       {{> "systems/metanthropes/templates/actor/parts/actor-effects.html"}}
     </div>
 
-    {{!-- Biography Tab --}}
+    {{!-- Biography Tab position here does not matter --}}
     <div class="tab biography" data-group="primary" data-tab="description">
       {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
       {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
     </div>
-    
+
   </section>
 </form>
 
