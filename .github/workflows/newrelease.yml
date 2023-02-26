@@ -20,9 +20,6 @@ on:
       - name: Install node modules
         run: npm install
         
-      - name: Gulp
-        run: npm run gulp
-        
       - name: Build Project
         run: npm run release
         
