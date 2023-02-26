@@ -37,12 +37,12 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="characteristics">Characteristics</a>
+    <a class="item" data-tab="characteristics">Characteristics & Stats</a>
     <a class="item" data-tab="metapowers">Metapowers</a>
     <a class="item" data-tab="metapowers">Combos</a>
-    <a class="item" data-tab="items">Fake Possessions</a>
     <a class="item" data-tab="effects">Fake Buffs</a>
     <a class="item" data-tab="effects">Fake Conditions</a>
+    <a class="item" data-tab="items">Fake Possessions</a>
     <a class="item" data-tab="description">Information rename</a>
   </nav>
 
@@ -52,6 +52,7 @@
     {{!-- Owned Features Tab --}}
     <div class="tab features" data-group="primary" data-tab="characteristics">
       <section class="grid grid-3col">
+        {{!-- adding body --}}
         <aside class="sidebar">
 
           {{!-- the below seems to be key to renaming (if possible) abilities to stats and the usage of characteristics, here also defines the type of roll that happens when clicking the stat, so levels of success should be placed here as well --}}
@@ -74,12 +75,58 @@
             {{/each}}
           </div>
         </aside>
+        {{!-- adding mind --}}
+        <aside class="sidebar">
 
+          {{!-- the below seems to be key to renaming (if possible) abilities to stats and the usage of characteristics, here also defines the type of roll that happens when clicking the stat, so levels of success should be placed here as well --}}
+
+          {{!-- The grid classes are defined in scss/global/_grid.scss. To use,use both the "grid" and "grid-Ncol" class where "N" can be any number from 1 to 12 and will create that number of columns.  --}}
+          <div class="stats flexcol">
+            
+            <label for="system.characteristics.mind.value" class="resource-label">Mind</label>
+            <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.characteristics.body.value" value="{{system.characteristics.body.value}}" data-dtype="Number"/>
+            </div>
+
+            {{#each system.stats as |stat key|}}
+              <div class="stat flexrow flex-group-center">
+                  {{!-- <label for="system.abilities.{{key//.value" class="resource-label rollable flexlarge align-left" data-roll="d100+@abilities.{{key//.mod" data-label="{{ability.label//">{{ability.label//</label> --}}
+                  <label for="system.stats.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d100" data-label="{{stat.label}}">{{stat.label}}</label>
+                  <input type="text" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number" />
+                  <span class="stat rollable" data-roll="d100" data-label="{{stat.label}}">{{numberFormat stat.mod decimals=0 sign=true}}</span>
+              </div>
+            {{/each}}
+          </div>
+        </aside>
+        {{!-- adding soul --}}
+        <aside class="sidebar">
+
+          {{!-- the below seems to be key to renaming (if possible) abilities to stats and the usage of characteristics, here also defines the type of roll that happens when clicking the stat, so levels of success should be placed here as well --}}
+
+          {{!-- The grid classes are defined in scss/global/_grid.scss. To use,use both the "grid" and "grid-Ncol" class where "N" can be any number from 1 to 12 and will create that number of columns.  --}}
+          <div class="stats flexcol">
+            
+            <label for="system.characteristics.soul.value" class="resource-label">Soul</label>
+            <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.characteristics.body.value" value="{{system.characteristics.body.value}}" data-dtype="Number"/>
+            </div>
+
+            {{#each system.stats as |stat key|}}
+              <div class="stat flexrow flex-group-center">
+                  {{!-- <label for="system.abilities.{{key//.value" class="resource-label rollable flexlarge align-left" data-roll="d100+@abilities.{{key//.mod" data-label="{{ability.label//">{{ability.label//</label> --}}
+                  <label for="system.stats.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d100" data-label="{{stat.label}}">{{stat.label}}</label>
+                  <input type="text" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number" />
+                  <span class="stat rollable" data-roll="d100" data-label="{{stat.label}}">{{numberFormat stat.mod decimals=0 sign=true}}</span>
+              </div>
+            {{/each}}
+          </div>
+        </aside>
         {{!-- For the main features list, span the right two columns --}}
-        <section class="main grid-span-2">
+        {{!-- I won't be needing this, so instead I want a column for mind and another for soul --}}
+        {{!-- <section class="main grid-span-2"> --}}
           {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-          {{> "systems/metanthropes/templates/actor/parts/actor-features.html"}}
-        </section>
+        {{!--  {{> "systems/metanthropes/templates/actor/parts/actor-features.html"}} --}}
+        {{!-- </section> --}}
 
       </section>
     </div>
