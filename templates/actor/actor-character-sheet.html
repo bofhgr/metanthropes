@@ -13,8 +13,8 @@
         <div class="resource flex-group-center">
           <label for="system.life.value" class="resource-label">Life</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.life.value" value="{{system.life.value}}" data-dtype="Number"/>
-          <span> / {{numberFormat system.life.max decimals=0 sign=false}} </span>
+         {{!-- <input type="text" name="system.life.value" value="{{system.life.value}}" data-dtype="Number"/> --}} 
+          <span> {{numberFormat system.life.value decimals=0 sign=false}} / {{numberFormat system.life.max decimals=0 sign=false}} </span>
           </div>
         </div>
         <div class="resource flex-group-center">
