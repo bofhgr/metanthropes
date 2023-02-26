@@ -1,6 +1,6 @@
 # CHANGELOG
 These are the latest changes for the Official Metanthropes RPG System for FoundryVTT
-## 1.3.0-1.3.7
+## 1.3.0-1.3.8
 - Publishing & testing for Stable branch
 - Fixes & Testing publishing features
 - First take at the character sheet requirements
