@@ -51,6 +51,17 @@
         "awa": {
           "value": 10
         }
+      },
+      "characteristics": {
+        "body": {
+          "value": 30
+        },
+        "mind": {
+          "value": 20
+        },
+        "soul": {
+          "value": 10
+        }
       }
     },
     "npc": {
