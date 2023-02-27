@@ -48,12 +48,12 @@ jobs:
         id: changelog
         uses: mikepenz/release-changelog-builder-action@v2
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+          GITHUB_TOKEN: ${{ github.token }}
           
       - name: Create Release
         uses: ncipollo/release-action@v1.9.0
         with:
-          token: ${{ secrets.PAT }}
+          token: ${{ github.token }}
           artifacts: "./system.json, ./${{steps.systemID.outputs.prop}}.zip"
           body: ${{ steps.changelog.outputs.changelog }}
           draft : true
