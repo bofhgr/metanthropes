@@ -70,6 +70,10 @@ export class MetanthropesActorSheet extends ActorSheet {
     // Handle ability scores.
     for (let [k, v] of Object.entries(context.system.stats)) {
       v.label = game.i18n.localize(CONFIG.METANTHROPES.stats[k]) ?? k;
+    };
+    // qp Handle characteristics.
+    for (let [k, v] of Object.entries(context.system.characteristics)) {
+      v.label = game.i18n.localize(CONFIG.METANTHROPES.characteristics[k]) ?? k;
     }
   }
 

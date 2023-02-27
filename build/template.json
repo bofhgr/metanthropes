@@ -13,7 +13,7 @@
           "min": 0,
           "max": 100
         },
-        "biography": ""
+        "biography": "testing biography on templates in json"
       }
     },
     "character": {

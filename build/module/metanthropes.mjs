@@ -30,8 +30,8 @@ Hooks.once('init', async function() {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-//    formula: "1d100 + @abilities.dex.mod",
-    formula: "1d100",
+//    formula: "1d100 + @abilities.dex.mod", testing this to see what happens - ideally I want to be able to call my initiative 'formula' from here
+    formula: "@stats.ref.roll",
     decimals: 2
   };
 
@@ -54,6 +54,7 @@ Hooks.once('init', async function() {
 /* -------------------------------------------- */
 
 //qp I don't get the below
+// handlebars are what is used someplace to do things like no idea what this does
 
 // If you need to add Handlebars helpers, here are a few useful examples:
 Handlebars.registerHelper('concat', function() {

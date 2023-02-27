@@ -57,7 +57,8 @@ export class MetanthropesActor extends Actor {
     for (let [key, stat] of Object.entries(systemData.stats)) {
     // Calculate the modifier using d20 rules. qp this could be how to add bodyetc to stats
     //den to exei parei mallon kati allo paizei
-    stat.current = stat.value + 50;
+    // edw mallon einai poy to xanei me kathe anoigma tou cs sto client kai allazoune ta noumera
+    stat.value = stat.value + 50;
     }
   }
 
