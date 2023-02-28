@@ -64,7 +64,7 @@
             {{#each system.stats as |stat key|}}
               <div class="stat flexrow flex-group-center">
                   <label for="system.stats.{{key}}.value" class="resource-label rollable align-left" data-roll="d100" data-label="{{stat.label}}">{{stat.label}}</label>
-                  <span class="stat rollable" data-roll="d100" data-label="{{stat.value}}">{{numberFormat stat.{{key}}.value decimals=0 sign=false}}</span>
+                  <span class="stat rollable" data-roll="d100" data-label="{{stat.value}}">{{numberFormat stat.key.value decimals=0 sign=false}}</span>
               </div>
             {{/each}}
           </div>
