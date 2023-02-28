@@ -89,7 +89,6 @@ export class MetanthropesActorSheet extends ActorSheet {
     const gear = [];
     const features = [];
     const metapowers = {
-      0: [],
       1: [],
       2: [],
       3: [],

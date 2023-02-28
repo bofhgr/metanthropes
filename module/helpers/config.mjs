@@ -1,7 +1,10 @@
 export const METANTHROPES = {};
 
 /**
- * The set of Ability Scores used within the sytem.
+ * Const is short for constant. It is a variable that cannot be changed.
+ * let is short for letiable. It is a variable that can be changed.
+ * always use const unless you know you're going to reassign the variable.
+ * const needs to be initialized 
  * @type {Object}
  */
 

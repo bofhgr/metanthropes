@@ -55,6 +55,7 @@ Hooks.once('init', async function() {
 
 //qp I don't get the below
 // handlebars are what is used someplace to do things like no idea what this does
+// see https://foundryvtt.com/article/intro-development/#resources for explanation (bottom of page)
 
 // If you need to add Handlebars helpers, here are a few useful examples:
 Handlebars.registerHelper('concat', function() {
