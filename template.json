@@ -14,10 +14,23 @@
           "max": 100
         },
         "biography": "testing biography on templates in json"
+      },
+      "enhanced": {
+        "life": {
+          "value": 200,
+          "min": 0,
+          "max": 200
+        },
+        "destiny": {
+          "value": 100,
+          "min": 0,
+          "max": 100
+        },
+        "biography": "testing biography on enhanced base in json"
       }
     },
     "character": {
-      "templates": ["base"],
+      "templates": ["enhanced"],
       "attributes": {
         "level": {
           "value": 1
