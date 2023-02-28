@@ -30,7 +30,7 @@
       }
     },
     "character": {
-      "templates": ["human", "metanthrope"],
+      "templates": ["metanthrope"],
       "attributes": {
         "level": {
           "value": 1
@@ -78,7 +78,7 @@
       }
     },
     "npc": {
-      "templates": ["human", "metanthrope"],
+      "templates": ["human"],
       "cr": 0
     }
   },

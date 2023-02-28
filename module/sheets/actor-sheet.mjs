@@ -71,10 +71,10 @@ export class MetanthropesActorSheet extends ActorSheet {
     for (let [k, v] of Object.entries(context.system.stats)) {
       v.label = game.i18n.localize(CONFIG.METANTHROPES.stats[k]) ?? k;
     };
-    // qp Handle characteristics.
-    for (let [k, v] of Object.entries(context.system.characteristics)) {
-      v.label = game.i18n.localize(CONFIG.METANTHROPES.characteristics[k]) ?? k;
-    }
+    // qp Handle characteristics. adding ; at the end of the below or changing the k,v to c,b fixed it?
+    for (let [c, b] of Object.entries(context.system.characteristics)) {
+      b.label = game.i18n.localize(CONFIG.METANTHROPES.characteristics[c]) ?? c;
+    };
   }
 
   /**
