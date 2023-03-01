@@ -57,8 +57,8 @@ jobs:
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
       with:
-          files: |
-          ${{steps.id.output.props}}.zip
+        files: |
+          metanthropes.zip
           system.json
         tag_name: ${{steps.version.output.props}}
         name: ${{steps.id.output.props}} - Version ${{steps.version.output.props}}
