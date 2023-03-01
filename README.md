@@ -9,7 +9,7 @@ This is the official Metanthropes RPG system for Foundry VTT.
 
 ## Latest Changes
 These are the latest changes for the Official Metanthropes RPG System for FoundryVTT
-### 1.4.20-1.4.26
+### 1.4.20-1.4.27
 - Understanding Rolls & Character stats
 ### 1.3.0-1.4.19
 - Publishing features

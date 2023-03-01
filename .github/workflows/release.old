@@ -20,7 +20,10 @@ jobs:
           
       - name: Install node modules
         run: npm install
-                
+
+      - name: Run Gulp compile
+        run: npm run compile
+              
       - name: Get System ID
         id: systemID
         uses: notiz-dev/github-action-json-property@release
