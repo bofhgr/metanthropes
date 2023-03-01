@@ -9,12 +9,11 @@ This is the official Metanthropes RPG system for Foundry VTT.
 
 ## Latest Changes
 These are the latest changes for the Official Metanthropes RPG System for FoundryVTT
-### 1.4.20-1.4.27
-- Understanding Rolls & Character stats
-### 1.3.0-1.4.19
+### 1.3.0-1.4.30
 - Publishing features
 - Fixes & Testing
 - First take at the character sheet requirements and capabilities
+- Understanding Rolls & Character stats
 ### 1.3.0
 - Setup Github repo for download & proper update from within Foundry
 ### 1.2.6 - 1.3.0
@@ -23,7 +22,6 @@ These are the latest changes for the Official Metanthropes RPG System for Foundr
 - Initial Testing
 ### 1.0.0
 - Initial Commit
-
 #### Based off asacolips boilerplate template for Foundry VTT.
 
 - For the original work please check out https://gitlab.com/asacolips-projects/foundry-mods/boilerplate
