@@ -17,6 +17,8 @@ jobs:
       with: 
         path: 'system.json'
         prop_path: 'version'
+    - name: Debug-print Version Number
+      run: echo ${{steps.version.outputs.prop}}
     - name: Set Download Link
       uses: jossef/action-set-json-field@v2
       with:
@@ -32,11 +34,11 @@ jobs:
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
       with:
-        files: |
-          metanthropes.zip
-          system.json
         tag_name: ${{steps.version.output.props}}
         name: Metanthropes - Version ${{steps.version.output.props}}
         body: ${{ github.event.release.body }}
         draft: false
         prerelease: false
+        files: |
+          metanthropes.zip
+          system.json
