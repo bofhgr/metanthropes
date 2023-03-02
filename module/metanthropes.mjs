@@ -31,7 +31,7 @@ Hooks.once('init', async function() {
    */
   CONFIG.Combat.initiative = {
 //    formula: "1d100 + @abilities.dex.mod", testing this to see what happens - ideally I want to be able to call my initiative 'formula' from here
-    formula: "@stats.ref.roll",
+    formula: "1d100 - @stats.ref.value",
     decimals: 2
   };
 

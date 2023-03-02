@@ -11,27 +11,26 @@
       <div class="resources grid grid-3col">
       {{!-- "flex-group-center" is also defined in the _grid.scss file and it will add a small amount of padding, a border, and will center all of its child lements content and text. --}}
         <div class="resource flex-group-center">
-          <label for="system.life.value" class="resource-label">Life</label>
           <div class="resource-content flexrow flex-center flex-between">
 <!--         {{!-- <input type="text" name="system.life.value" value="{{system.life.value}}" data-dtype="Number"/> --}} -->
+          <label for="system.life.value" class="resource-label">Life</label>
           <span>: {{numberFormat system.life.value decimals=0 sign=false}} / {{numberFormat system.life.max decimals=0 sign=false}} </span>
           </div>
         </div>
         <div class="resource flex-group-center">
+          <div class="resource-content flexrow flex-center flex-between"></div>
           <label for="system.destiny.value" class="resource-label">Destiny</label>
-          <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="system.destiny.value" value="{{system.destiny.value}}" data-dtype="Number"/>
           <span> / </span>
           <input type="text" name="system.destiny.max" value="{{system.destiny.max}}" data-dtype="Number"/>
           </div>
-        </div>
         <div class="resource flex-group-center">
-          <label for="system.attributes.level.value" class="resource-label">Experience</label>
           <div class="resource-content flexrow flex-center flex-between">
+          <label for="system.attributes.level.value" class="resource-label">Experience</label>
           <input type="text" name="system.attributes.level.value" value="{{system.attributes.level.value}}" data-dtype="Number"/>
           </div>
         </div>
-      </div>
+      </div> 
     </div>
   </header>
 
@@ -64,7 +63,8 @@
             {{#each system.stats as |stat key|}}
               <div class="stat flexrow flex-group-center">
                   <label for="system.stats.{{key}}.value" class="resource-label rollable align-left" data-roll="d100" data-label="{{stat.label}}">{{stat.label}}</label>
-                  <span class="stat rollable" data-roll="@stats.{{key}}.qp-d100" data-label="{{stat.label}}">{{numberFormat stat.qp decimals=0 sign=false}}</span>
+                  <input type="text" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number"/>
+                  <span class="stat-qp rollable" data-roll="d100+@stats.{{key}}.qp" data-label="{{stat.label}}">{{numberFormat stat.value decimals=0 sign=false}}</span>
               </div>
             {{/each}}
           </div>
@@ -95,7 +95,8 @@
             {{#each system.stats as |stat key|}}
               <div class="stat flexrow flex-group-center">
                   <label for="system.stats.{{key}}.value" class="resource-label rollable align-left" data-roll="d100" data-label="{{stat.label}}">{{stat.label}}</label>
-                  <span class="stat rollable" data-roll="@stats.{{key}}.qp-d100" data-label="{{stat.label}}">{{numberFormat stat.qp decimals=0 sign=false}}</span>
+                  <input type="text" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number"/>
+                  <span class="stat-qp rollable" data-roll="@stats.{{key}}.qp-d100" data-label="{{stat.label}}">{{numberFormat stat.qp decimals=0 sign=false}}</span>
               </div>
             {{/each}}
           </div>
@@ -116,7 +117,8 @@
             {{#each system.stats as |stat key|}}
               <div class="stat flexrow flex-group-center">
                   <label for="system.stats.{{key}}.value" class="resource-label rollable align-left" data-roll="d100" data-label="{{stat.label}}">{{stat.label}}</label>
-                  <span class="stat rollable" data-roll="@stats.{{key}}.qp-d100" data-label="{{stat.label}}">{{numberFormat stat.qp decimals=0 sign=false}}</span>
+                  <input type="text" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number"/>
+                  <span class="stat-qp rollable" data-roll="@stats.{{key}}.qp-d100" data-label="{{stat.label}}">{{numberFormat stat.qp decimals=0 sign=false}}</span>
               </div>
             {{/each}}
           </div>
