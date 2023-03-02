@@ -1,24 +1,13 @@
 <form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
   <!--  Sheet Header einai to pio panw aristera element, stin ousia gemizei tin prwti grami poy einai to idio size me to photo -->
   <header class="sheet-header">
-    <img
-      class="profile-img"
-      src="{{actor.img}}"
-      data-edit="img"
-      title="{{actor.name}}"
-      height="100"
-      width="100"
-    />
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
     {{!-- meta to photo exoume ta exis --}}
     <div class="header-fields">
       {{!-- the default name for new actors based on this template --}}
       <h1 class="charname">
-        <input
-          name="name"
-          type="text"
-          value="{{actor.name}}"
-          placeholder="{{localize "METANTHROPES.actorplaceholdername"}}"
-        />
+        <input name="name" type="text" value="{{actor.name}}"
+          placeholder="{{localize "METANTHROPES.actorplaceholdername" }}" />
       </h1>
       <!--       The grid classes are defined in scss/global/_grid.scss. To use, use
       both the "grid" and "grid-Ncol" class where "N" can be any number from 1
@@ -33,42 +22,23 @@
           <div class="resource-content flexrow flex-center flex-between">
             <!--        <input type="text" name="system.life.value" value="{{system.life.value}}" data-dtype="Number"/> -->
             <label for="system.life.value" class="resource-label">Life</label>
-            <span
-              >: {{numberFormat system.life.value decimals=0 sign=false}} /
+            <span>: {{numberFormat system.life.value decimals=0 sign=false}} /
               {{numberFormat system.life.max decimals=0 sign=false}}
             </span>
           </div>
         </div>
         <div class="resource flex-group-center">
           <div class="resource-content flexrow flex-center flex-between"></div>
-          <label for="system.destiny.value" class="resource-label"
-            >Destiny</label
-          >
-          <input
-            type="text"
-            name="system.destiny.value"
-            value="{{system.destiny.value}}"
-            data-dtype="Number"
-          />
+          <label for="system.destiny.value" class="resource-label">Destiny</label>
+          <input type="text" name="system.destiny.value" value="{{system.destiny.value}}" data-dtype="Number" />
           <span> / </span>
-          <input
-            type="text"
-            name="system.destiny.max"
-            value="{{system.destiny.max}}"
-            data-dtype="Number"
-          />
+          <input type="text" name="system.destiny.max" value="{{system.destiny.max}}" data-dtype="Number" />
         </div>
         <div class="resource flex-group-center">
           <div class="resource-content flexrow flex-center flex-between">
-            <label for="system.attributes.level.value" class="resource-label"
-              >Experience</label
-            >
-            <input
-              type="text"
-              name="system.attributes.level.value"
-              value="{{system.attributes.level.value}}"
-              data-dtype="Number"
-            />
+            <label for="system.attributes.level.value" class="resource-label">Experience</label>
+            <input type="text" name="system.attributes.level.value" value="{{system.attributes.level.value}}"
+              data-dtype="Number" />
           </div>
         </div>
       </div>
@@ -98,41 +68,19 @@
           use,use both the "grid" and "grid-Ncol" class where "N" can be any
           number from 1 to 12 and will create that number of columns. --}}
           <div class="stats flexcol flex-center">
-            <label
-              for="system.characteristics.body.value"
-              class="resource-label"
-              >Body</label
-            >
+            <label for="system.characteristics.body.value" class="resource-label">Body</label>
             <div class="resource-content flexrow flex-center flex-between">
-              <input
-                type="text"
-                name="system.characteristics.body.value"
-                value="{{system.characteristics.body.value}}"
-                data-dtype="Number"
-              />
+              <input type="text" name="system.characteristics.body.value" value="{{system.characteristics.body.value}}"
+                data-dtype="Number" />
             </div>
             {{#each system.stats as |stat key|}}
-            <div class="stat flexrow flex-group-center">
-              <label
-                for="system.stats.{{key}}.value"
-                class="resource-label rollable align-left"
-                data-roll="d100"
-                data-label="{{stat.label}}"
-                >{{stat.label}}</label
-              >
-              <input
-                type="text"
-                name="system.stats.{{key}}.value"
-                value="{{stat.value}}"
-                data-dtype="Number"
-              />
-              <span
-                class="stat-qp rollable"
-                data-roll="d100+@stats.{{key}}.qp"
-                data-label="{{stat.label}}"
-                >{{numberFormat stat.value decimals=0 sign=false}}</span
-              >
-            </div>
+              <div class="stat flexrow flex-group-center">
+                <label for="system.stats.{{key}}.value" class="resource-label rollable align-left" data-roll="d100"
+                  data-label="{{stat.label}}">{{stat.label}}</label>
+                <input type="text" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number" />
+                <span class="stat-qp rollable" data-roll="d100+@stats.{{key}}.qp"
+                  data-label="{{stat.label}}">{{numberFormat stat.value decimals=0 sign=false}}</span>
+              </div>
             {{/each}}
           </div>
         </aside>
@@ -157,42 +105,20 @@
           class where "N" can be any number from 1 to 12 and will create that
           number of columns. --}}
           <div class="stats flexcol">
-            <label
-              for="system.characteristics.mind.value"
-              class="resource-label"
-              >Mind</label
-            >
+            <label for="system.characteristics.mind.value" class="resource-label">Mind</label>
             <div class="resource-content flexrow flex-center flex-between">
-              <input
-                type="text"
-                name="system.characteristics.mind.value"
-                value="{{system.characteristics.mind.value}}"
-                data-dtype="Number"
-              />
+              <input type="text" name="system.characteristics.mind.value" value="{{system.characteristics.mind.value}}"
+                data-dtype="Number" />
             </div>
 
             {{#each system.stats as |stat key|}}
-            <div class="stat flexrow flex-group-center">
-              <label
-                for="system.stats.{{key}}.value"
-                class="resource-label rollable align-left"
-                data-roll="d100"
-                data-label="{{stat.label}}"
-                >{{stat.label}}</label
-              >
-              <input
-                type="text"
-                name="system.stats.{{key}}.value"
-                value="{{stat.value}}"
-                data-dtype="Number"
-              />
-              <span
-                class="stat-qp rollable"
-                data-roll="d100+@stats.{{key}}.qp"
-                data-label="{{stat.label}}"
-                >{{numberFormat stat.qp decimals=0 sign=false}}</span
-              >
-            </div>
+              <div class="stat flexrow flex-group-center">
+                <label for="system.stats.{{key}}.value" class="resource-label rollable align-left" data-roll="d100"
+                  data-label="{{stat.label}}">{{stat.label}}</label>
+                <input type="text" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number" />
+                <span class="stat-qp rollable" data-roll="d100+@stats.{{key}}.qp"
+                  data-label="{{stat.label}}">{{numberFormat stat.qp decimals=0 sign=false}}</span>
+              </div>
             {{/each}}
           </div>
         </aside>
@@ -206,42 +132,20 @@
           class where "N" can be any number from 1 to 12 and will create that
           number of columns. --}}
           <div class="stats flexcol">
-            <label
-              for="system.characteristics.soul.value"
-              class="resource-label"
-              >Soul</label
-            >
+            <label for="system.characteristics.soul.value" class="resource-label">Soul</label>
             <div class="resource-content flexrow flex-center flex-between">
-              <input
-                type="text"
-                name="system.characteristics.soul.value"
-                value="{{system.characteristics.soul.value}}"
-                data-dtype="Number"
-              />
+              <input type="text" name="system.characteristics.soul.value" value="{{system.characteristics.soul.value}}"
+                data-dtype="Number" />
             </div>
 
             {{#each system.stats as |stat key|}}
-            <div class="stat flexrow flex-group-center">
-              <label
-                for="system.stats.{{key}}.value"
-                class="resource-label rollable align-left"
-                data-roll="d100"
-                data-label="{{stat.label}}"
-                >{{stat.label}}</label
-              >
-              <input
-                type="text"
-                name="system.stats.{{key}}.value"
-                value="{{stat.value}}"
-                data-dtype="Number"
-              />
-              <span
-                class="stat-qp rollable"
-                data-roll="d100+@stats.{{key}}.qp"
-                data-label="{{stat.label}}"
-                >{{numberFormat stat.qp decimals=0 sign=false}}</span
-              >
-            </div>
+              <div class="stat flexrow flex-group-center">
+                <label for="system.stats.{{key}}.value" class="resource-label rollable align-left" data-roll="d100"
+                  data-label="{{stat.label}}">{{stat.label}}</label>
+                <input type="text" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number" />
+                <span class="stat-qp rollable" data-roll="d100+@stats.{{key}}.qp"
+                  data-label="{{stat.label}}">{{numberFormat stat.qp decimals=0 sign=false}}</span>
+              </div>
             {{/each}}
           </div>
         </aside>
