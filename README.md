@@ -1,9 +1,7 @@
-# Metanthropes RPG
-
-![Foundry v10](https://img.shields.io/badge/foundry-v10-green)
 ![image](https://content.invisioncic.com/e290497/monthly_2022_12/01.jpg.10f501a62b5254cef6f04d9f87c8b52d.jpg)
-
-This is the official Metanthropes RPG system for Foundry VTT.
+![Foundry v10](https://img.shields.io/badge/foundry-v10-green)
+# Metanthropes RPG Development Builds
+These are the development builds for the Metanthropes RPG system for Foundry VTT.
 - This project is in no way affiliated with or supported by FoundryVTT.
 - For more information about Metanthropes RPG visit https://metanthropes.com
 
