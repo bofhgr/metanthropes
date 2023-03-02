@@ -32,5 +32,7 @@
   "METANTHROPES.EffectEdit": "Edit Effect",
   "METANTHROPES.EffectDelete": "Delete Effect",
 
-  "METANTHROPES.Add": "Add"
+  "METANTHROPES.Add": "Add",
+  "METANTHROPES.actorplaceholdername": "Metanthropes Actor Name Placeholder",
+  "METANTHROPES.NewItemTest": "New {itemType}"
 }

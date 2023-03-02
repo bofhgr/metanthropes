@@ -1,11 +1,13 @@
-import {onManageActiveEffect, prepareActiveEffectCategories} from "../helpers/effects.mjs";
+import {
+  onManageActiveEffect,
+  prepareActiveEffectCategories,
+} from "../helpers/effects.mjs";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
 export class MetanthropesActorSheet extends ActorSheet {
-
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
@@ -13,7 +15,13 @@ export class MetanthropesActorSheet extends ActorSheet {
       template: "systems/metanthropes/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "features" }]
+      tabs: [
+        {
+          navSelector: ".sheet-tabs",
+          contentSelector: ".sheet-body",
+          initial: "features",
+        },
+      ],
     });
   }
 
@@ -40,13 +48,13 @@ export class MetanthropesActorSheet extends ActorSheet {
     context.flags = actorData.flags;
 
     // Prepare character data and items.
-    if (actorData.type == 'character') {
+    if (actorData.type == "character") {
       this._prepareItems(context);
       this._prepareCharacterData(context);
     }
 
     // Prepare NPC data and items.
-    if (actorData.type == 'npc') {
+    if (actorData.type == "npc") {
       this._prepareItems(context);
     }
 
@@ -70,11 +78,11 @@ export class MetanthropesActorSheet extends ActorSheet {
     // Handle ability scores.
     for (let [k, v] of Object.entries(context.system.stats)) {
       v.label = game.i18n.localize(CONFIG.METANTHROPES.stats[k]) ?? k;
-    };
+    }
     // qp Handle characteristics. adding ; at the end of the below or changing the k,v to c,b fixed it?
     for (let [c, b] of Object.entries(context.system.characteristics)) {
       b.label = game.i18n.localize(CONFIG.METANTHROPES.characteristics[c]) ?? c;
-    };
+    }
   }
 
   /**
@@ -93,22 +101,22 @@ export class MetanthropesActorSheet extends ActorSheet {
       2: [],
       3: [],
       4: [],
-      5: []
+      5: [],
     };
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
       // Append to gear.
-      if (i.type === 'item') {
+      if (i.type === "item") {
         gear.push(i);
       }
       // Append to features.
-      else if (i.type === 'feature') {
+      else if (i.type === "feature") {
         features.push(i);
       }
       // Append to metapowers.
-      else if (i.type === 'metapower') {
+      else if (i.type === "metapower") {
         if (i.system.metapowerLevel != undefined) {
           metapowers[i.system.metapowerLevel].push(i);
         }
@@ -128,7 +136,7 @@ export class MetanthropesActorSheet extends ActorSheet {
     super.activateListeners(html);
 
     // Render the item sheet for viewing/editing prior to the editable check.
-    html.find('.item-edit').click(ev => {
+    html.find(".item-edit").click((ev) => {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       item.sheet.render(true);
@@ -139,10 +147,10 @@ export class MetanthropesActorSheet extends ActorSheet {
     if (!this.isEditable) return;
 
     // Add Inventory Item
-    html.find('.item-create').click(this._onItemCreate.bind(this));
+    html.find(".item-create").click(this._onItemCreate.bind(this));
 
     // Delete Inventory Item
-    html.find('.item-delete').click(ev => {
+    html.find(".item-delete").click((ev) => {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       item.delete();
@@ -150,15 +158,17 @@ export class MetanthropesActorSheet extends ActorSheet {
     });
 
     // Active Effect management
-    html.find(".effect-control").click(ev => onManageActiveEffect(ev, this.actor));
+    html
+      .find(".effect-control")
+      .click((ev) => onManageActiveEffect(ev, this.actor));
 
     // Rollable abilities.
-    html.find('.rollable').click(this._onRoll.bind(this));
+    html.find(".rollable").click(this._onRoll.bind(this));
 
     // Drag events for macros.
     if (this.actor.isOwner) {
-      let handler = ev => this._onDragStart(ev);
-      html.find('li.item').each((i, li) => {
+      let handler = (ev) => this._onDragStart(ev);
+      html.find("li.item").each((i, li) => {
         if (li.classList.contains("inventory-header")) return;
         li.setAttribute("draggable", true);
         li.addEventListener("dragstart", handler, false);
@@ -179,18 +189,22 @@ export class MetanthropesActorSheet extends ActorSheet {
     // Grab any data associated with this control.
     const data = duplicate(header.dataset);
     // Initialize a default name.
-    const name = `New ${type.capitalize()}`;
+    // qp removing this to add localization const name = `New ${type.capitalize()}`;
+    // see https://foundryvtt.wiki/en/development/guides/SD-tutorial/SD13-Localization for quick reference
+    const name = game.i18n.format(METANTHROPES.NewItemTest, {
+      itemType: type.capitalize(),
+    });
     // Prepare the item object.
     const itemData = {
       name: name,
       type: type,
-      system: data
+      system: data,
     };
     // Remove the type from the dataset since it's in the itemData.type prop.
     delete itemData.system["type"];
 
     // Finally, create the item!
-    return await Item.create(itemData, {parent: this.actor});
+    return await Item.create(itemData, { parent: this.actor });
   }
 
   /**
@@ -205,8 +219,8 @@ export class MetanthropesActorSheet extends ActorSheet {
 
     // Handle item rolls.
     if (dataset.rollType) {
-      if (dataset.rollType == 'item') {
-        const itemId = element.closest('.item').dataset.itemId;
+      if (dataset.rollType == "item") {
+        const itemId = element.closest(".item").dataset.itemId;
         const item = this.actor.items.get(itemId);
         if (item) return item.roll();
       }
@@ -214,15 +228,14 @@ export class MetanthropesActorSheet extends ActorSheet {
 
     // Handle rolls that supply the formula directly.
     if (dataset.roll) {
-      let label = dataset.label ? `[stat] ${dataset.label}` : '';
+      let label = dataset.label ? `[stat] ${dataset.label}` : "";
       let roll = new Roll(dataset.roll, this.actor.getRollData());
       roll.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: label,
-        rollMode: game.settings.get('core', 'rollMode'),
+        rollMode: game.settings.get("core", "rollMode"),
       });
       return roll;
     }
   }
-
 }
