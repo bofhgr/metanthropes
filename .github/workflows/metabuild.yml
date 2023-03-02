@@ -26,7 +26,7 @@ jobs:
         field: 'download'
         value: "https://github.com/${{github.repository}}/releases/download/${{steps.version.outputs.prop}}/metanthropes.zip"
     - name: Zip the compiled files
-      uses: thedoctor0/zip-release@0.7.2
+      uses: thedoctor0/zip-release@0.7.1
       with:
         type: 'zip'
         filename: 'metanthropes.zip' # I need to make the name to match the release name / version name of the build --- oooor just name it metanthropes.zip and be done with it
