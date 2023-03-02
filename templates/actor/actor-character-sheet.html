@@ -13,7 +13,7 @@
         <div class="resource flex-group-center">
           <label for="system.life.value" class="resource-label">Life</label>
           <div class="resource-content flexrow flex-center flex-between">
-         {{!-- <input type="text" name="system.life.value" value="{{system.life.value}}" data-dtype="Number"/> --}} 
+<!--         {{!-- <input type="text" name="system.life.value" value="{{system.life.value}}" data-dtype="Number"/> --}} -->
           <span>: {{numberFormat system.life.value decimals=0 sign=false}} / {{numberFormat system.life.max decimals=0 sign=false}} </span>
           </div>
         </div>
@@ -64,12 +64,12 @@
             {{#each system.stats as |stat key|}}
               <div class="stat flexrow flex-group-center">
                   <label for="system.stats.{{key}}.value" class="resource-label rollable align-left" data-roll="d100" data-label="{{stat.label}}">{{stat.label}}</label>
-                  <span class="stat rollable" data-roll="@stats.{{key}}.value-d100" data-label="{{stat.label}}">{{numberFormat stat.qp decimals=0 sign=false}}</span>
+                  <span class="stat rollable" data-roll="@stats.{{key}}.qp-d100" data-label="{{stat.label}}">{{numberFormat stat.qp decimals=0 sign=false}}</span>
               </div>
             {{/each}}
           </div>
         </aside>
-
+<!--
         {{!-- {{#each system.abilities as |ability key|}}
         <div class="ability flexrow flex-group-center">
           <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d20+@abilities.{{key}}.mod" data-label="{{ability.label}}">{{ability.label}}</label>
@@ -78,9 +78,7 @@
         </div>
         {{/each}}
         --}}
-        
-
-
+-->    
 
         {{!-- adding mind --}}
         <aside class="sidebar">
@@ -91,15 +89,13 @@
             
             <label for="system.characteristics.mind.value" class="resource-label">Mind</label>
             <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.characteristics.body.value" value="{{system.characteristics.body.value}}" data-dtype="Number"/>
+            <input type="text" name="system.characteristics.mind.value" value="{{system.characteristics.mind.value}}" data-dtype="Number"/>
             </div>
 
             {{#each system.stats as |stat key|}}
               <div class="stat flexrow flex-group-center">
-                  {{!-- <label for="system.abilities.{{key//.value" class="resource-label rollable flexlarge align-left" data-roll="d100+@abilities.{{key//.mod" data-label="{{ability.label//">{{ability.label//</label> --}}
-                  <label for="system.stats.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d100" data-label="{{stat.label}}">{{stat.label}}</label>
-                  <input type="text" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number" />
-                  <span class="stat rollable" data-roll="d100" data-label="{{stat.label}}">{{numberFormat stat.mod decimals=0 sign=true}}</span>
+                  <label for="system.stats.{{key}}.value" class="resource-label rollable align-left" data-roll="d100" data-label="{{stat.label}}">{{stat.label}}</label>
+                  <span class="stat rollable" data-roll="@stats.{{key}}.qp-d100" data-label="{{stat.label}}">{{numberFormat stat.qp decimals=0 sign=false}}</span>
               </div>
             {{/each}}
           </div>
@@ -114,26 +110,23 @@
             
             <label for="system.characteristics.soul.value" class="resource-label">Soul</label>
             <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.characteristics.body.value" value="{{system.characteristics.body.value}}" data-dtype="Number"/>
+            <input type="text" name="system.characteristics.soul.value" value="{{system.characteristics.soul.value}}" data-dtype="Number"/>
             </div>
 
             {{#each system.stats as |stat key|}}
               <div class="stat flexrow flex-group-center">
-                  {{!-- <label for="system.abilities.{{key//.value" class="resource-label rollable flexlarge align-left" data-roll="d100+@abilities.{{key//.mod" data-label="{{ability.label//">{{ability.label//</label> --}}
-                  <label for="system.stats.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d100" data-label="{{stat.label}}">{{stat.label}}</label>
-                  <input type="text" name="system.stats.{{key}}.value" value="{{stat.value}}" data-dtype="Number" />
-                  <span class="stat rollable" data-roll="d100" data-label="{{stat.label}}">{{numberFormat stat.mod decimals=0 sign=true}}</span>
+                  <label for="system.stats.{{key}}.value" class="resource-label rollable align-left" data-roll="d100" data-label="{{stat.label}}">{{stat.label}}</label>
+                  <span class="stat rollable" data-roll="@stats.{{key}}.qp-d100" data-label="{{stat.label}}">{{numberFormat stat.qp decimals=0 sign=false}}</span>
               </div>
             {{/each}}
           </div>
         </aside>
         {{!-- For the main features list, span the right two columns --}}
         {{!-- I won't be needing this, so instead I want a column for mind and another for soul --}}
-        {{!-- <section class="main grid-span-2"> --}}
+<!--        {{!-- <section class="main grid-span-2"> --}} -->
           {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-        {{!--  {{> "systems/metanthropes/templates/actor/parts/actor-features.html"}} --}}
-        {{!-- </section> --}}
-
+<!--        {{!--  {{> "systems/metanthropes/templates/actor/parts/actor-features.html"}} --}} -->
+<!--        {{!-- </section> --}} -->
       </section>
     </div>
 

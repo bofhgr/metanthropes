@@ -38,31 +38,31 @@
       },
       "stats": {
         "pow": {
-          "value": 10
+          "value": 40
         },
         "ref": {
-          "value": 10
+          "value": 50
         },
         "end": {
-          "value": 10
+          "value": 30
         },
         "per": {
-          "value": 10
+          "value": 20
         },
         "man": {
-          "value": 10
+          "value": 30
         },
         "cre": {
-          "value": 10
+          "value": 30
         },
         "wil": {
-          "value": 10
+          "value": 40
         },
         "con": {
-          "value": 10
+          "value": 20
         },
         "awa": {
-          "value": 10
+          "value": 80
         }
       },
       "characteristics": {
