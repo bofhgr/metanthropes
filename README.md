@@ -16,7 +16,7 @@ This is a work in progress and is not ready for general use. Please do not use t
 
 These are the latest changes for the Official Metanthropes RPG System for FoundryVTT
 
-### 0.4.37 - 0.5.05
+### 0.4.37 - 0.5.06
 
 - Proper versioning and release / tag cleanup
 - Started work on templates, character sheets and rolls
