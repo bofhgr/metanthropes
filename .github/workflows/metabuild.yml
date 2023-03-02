@@ -24,7 +24,7 @@ jobs:
       with:
         file: './system.json'
         field: 'download'
-        value: "https://github.com/${{github.repository}}/releases/download/${{steps.version.outputs.tag}}/metanthropes.zip"
+        value: "https://github.com/${{github.repository}}/releases/download/${{steps.version.outputs.prop}}/metanthropes.zip"
     - name: Zip the compiled files
       uses: thedoctor0/zip-release@0.7.2
       with:
@@ -34,8 +34,8 @@ jobs:
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
       with:
-        tag_name: ${{steps.version.output.props}}
-        name: Metanthropes - Version ${{steps.version.output.props}}
+        tag_name: ${{steps.version.outputs.prop}}
+        name: Metanthropes - Version ${{steps.version.outputs.prop}}
         body: ${{ github.event.release.body }}
         draft: false
         prerelease: false
