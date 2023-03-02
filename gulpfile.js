@@ -18,6 +18,8 @@ function compileScss() {
   // Configure options for sass output. For example, 'expanded' or 'nested'
   let options = {
     outputStyle: 'expanded'
+    //qp adding this to stop putting the sourcemap in the css file
+    'sourcemap=none': true,
   };
   return gulp.src(SYSTEM_SCSS)
     .pipe(sourcemaps.init())
