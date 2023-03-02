@@ -28,7 +28,7 @@ jobs:
       with:
         type: 'zip'
         filename: 'metanthropes.zip' # I need to make the name to match the release name / version name of the build --- oooor just name it metanthropes.zip and be done with it
-        exclusions: '*.git* /*node_modules/* /*.vscode/* /.npmignore/* /.nvmrc/* /*gulpfile.js/* /*package-lock.json/* /*package.json/* /scss/*'
+        exclusions: '*.git* /*node_modules/* /*.vscode/* .npmignore .nvmrc .gulpfile.js .package-lock.json .package.json /scss/*'
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
       with:
@@ -38,5 +38,5 @@ jobs:
         tag_name: ${{steps.version.output.props}}
         name: Metanthropes - Version ${{steps.version.output.props}}
         body: ${{ github.event.release.body }}
-        draft: true
+        draft: false
         prerelease: false
