@@ -46,7 +46,10 @@
 
 .tox {
   .tox-editor-container {
-    background: $c-green;
+    // qp playing with background colors background: $c-green;
+    background-image: url("../artwork/bg-sheet.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .tox-edit-area {

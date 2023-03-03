@@ -1,6 +1,9 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
+    "types": [
+      "character",
+      "npc"
+    ],
     "templates": {
       "human": {
         "life": {
@@ -30,7 +33,9 @@
       }
     },
     "character": {
-      "templates": ["metanthrope"],
+      "templates": [
+        "metanthrope"
+      ],
       "attributes": {
         "level": {
           "value": 1
@@ -78,28 +83,40 @@
       }
     },
     "npc": {
-      "templates": ["human"],
+      "templates": [
+        "human"
+      ],
       "cr": 0
     }
   },
   "Item": {
-    "types": ["item", "feature", "metapower"],
+    "types": [
+      "item",
+      "feature",
+      "metapower"
+    ],
     "templates": {
       "base": {
         "description": ""
       }
     },
     "item": {
-      "templates": ["base"],
+      "templates": [
+        "base"
+      ],
       "quantity": 1,
       "weight": 0,
       "formula": "d100"
     },
     "feature": {
-      "templates": ["base"]
+      "templates": [
+        "base"
+      ]
     },
     "metapower": {
-      "templates": ["base"],
+      "templates": [
+        "base"
+      ],
       "metapowerLevel": 1
     }
   }

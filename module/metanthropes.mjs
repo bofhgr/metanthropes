@@ -12,7 +12,7 @@ import { METANTHROPES } from "./helpers/config.mjs";
 /*  Init Hook                                   */
 /* -------------------------------------------- */
 
-Hooks.once('init', async function() {
+Hooks.once('init', async function () {
 
   // Add utility classes to the global game object so that they're more easily
   // accessible in global contexts.
@@ -30,7 +30,7 @@ Hooks.once('init', async function() {
    * @type {String}
    */
   CONFIG.Combat.initiative = {
-//    formula: "1d100 + @abilities.dex.mod", testing this to see what happens - ideally I want to be able to call my initiative 'formula' from here
+    //    formula: "1d100 + @abilities.dex.mod", testing this to see what happens - ideally I want to be able to call my initiative 'formula' from here
     formula: "1d100 - @stats.ref.value",
     decimals: 2
   };
@@ -58,7 +58,7 @@ Hooks.once('init', async function() {
 // see https://foundryvtt.com/article/intro-development/#resources for explanation (bottom of page)
 
 // If you need to add Handlebars helpers, here are a few useful examples:
-Handlebars.registerHelper('concat', function() {
+Handlebars.registerHelper('concat', function () {
   var outStr = '';
   for (var arg in arguments) {
     if (typeof arguments[arg] != 'object') {
@@ -68,7 +68,7 @@ Handlebars.registerHelper('concat', function() {
   return outStr;
 });
 
-Handlebars.registerHelper('toLowerCase', function(str) {
+Handlebars.registerHelper('toLowerCase', function (str) {
   return str.toLowerCase();
 });
 
@@ -76,7 +76,7 @@ Handlebars.registerHelper('toLowerCase', function(str) {
 /*  Ready Hook                                  */
 /* -------------------------------------------- */
 
-Hooks.once("ready", async function() {
+Hooks.once("ready", async function () {
   // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
   Hooks.on("hotbarDrop", (bar, data, slot) => createItemMacro(data, slot));
 });

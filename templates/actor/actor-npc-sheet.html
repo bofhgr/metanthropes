@@ -2,9 +2,9 @@
 
   {{!-- Sheet Header --}}
   <header class="sheet-header">
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
       from 1 to 12 and will create that number of columns.  --}}
@@ -16,27 +16,27 @@
         <div class="resource flex-group-center">
           <label for="system.life.value" class="resource-label">Life</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.life.value" value="{{system.life.value}}" data-dtype="Number"/>
+            <input type="text" name="system.life.value" value="{{system.life.value}}" data-dtype="Number" />
             <span> / </span>
-            <input type="text" name="system.life.max" value="{{system.life.max}}" data-dtype="Number"/>
+            <input type="text" name="system.life.max" value="{{system.life.max}}" data-dtype="Number" />
           </div>
         </div>
 
         <div class="resource flex-group-center">
           <label for="system.destiny.value" class="resource-label">Destiny</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.destiny.value" value="{{system.destiny.value}}" data-dtype="Number"/>
+            <input type="text" name="system.destiny.value" value="{{system.destiny.value}}" data-dtype="Number" />
             <span> / </span>
-            <input type="text" name="system.destiny.max" value="{{system.destiny.max}}" data-dtype="Number"/>
+            <input type="text" name="system.destiny.max" value="{{system.destiny.max}}" data-dtype="Number" />
           </div>
         </div>
 
         <div class="resource flex-group-center">
           <label for="system.cr" class="resource-label">CR / XP</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="text" name="system.cr" value="{{system.cr}}" data-dtype="Number"/>
+            <input type="text" name="system.cr" value="{{system.cr}}" data-dtype="Number" />
             <span> / </span>
-            <input type="text" disabled="true" name="system.xp" value="{{system.xp}}" data-dtype="Number"/>
+            <input type="text" disabled="true" name="system.xp" value="{{system.xp}}" data-dtype="Number" />
           </div>
         </div>
 
@@ -63,7 +63,7 @@
 
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/metanthropes/templates/actor/parts/actor-items.html"}}
+      {{> "systems/metanthropes/templates/actor/parts/actor-items.html"}}
     </div>
 
     {{!-- Active Effects Tab --}}
@@ -73,4 +73,3 @@
 
   </section>
 </form>
-

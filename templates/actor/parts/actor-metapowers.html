@@ -3,14 +3,16 @@
     <li class="item flexrow items-header">
       <div class="item-name">Level {{metapowerLevel}} Metapowers</div>
       <div class="item-controls">
-        <a class="item-control item-create" title="Create item" data-type="metapower" data-metapower-level="{{metapowerLevel}}"><i class="fas fa-plus"></i> Add LVL {{metapowerLevel}}</a>
+        <a class="item-control item-create" title="Create item" data-type="metapower"
+          data-metapower-level="{{metapowerLevel}}"><i class="fas fa-plus"></i> Add LVL {{metapowerLevel}}</a>
       </div>
     </li>
     {{#each metapowers as |item id|}}
       <li class="item flexrow" data-item-id="{{item._id}}">
         <div class="item-name flexrow">
           <div class="item-image">
-            <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
+            <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24"
+                height="24" /></a>
           </div>
           <h4>{{item.name}}</h4>
         </div>

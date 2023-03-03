@@ -55,11 +55,11 @@ export class MetanthropesActor extends Actor {
 
     // Loop through ability scores, and add their modifiers to our sheet output.
     for (let [key, stat] of Object.entries(systemData.stats)) {
-    // Calculate the modifier using d20 rules. qp this could be how to add bodyetc to stats
-    // ability.mod = Math.floor((ability.value - 10) / 2);
-    //den to exei parei mallon kati allo paizei
-    // edw mallon einai poy to xanei me kathe anoigma tou cs sto client kai allazoune ta noumera
-    stat.qp = Math.floor((stat.value - 10) / 2);
+      // Calculate the modifier using d20 rules. qp this could be how to add bodyetc to stats
+      // ability.mod = Math.floor((ability.value - 10) / 2);
+      //den to exei parei mallon kati allo paizei
+      // edw mallon einai poy to xanei me kathe anoigma tou cs sto client kai allazoune ta noumera
+      stat.qp = Math.floor((stat.value - 10) / 2);
     }
   }
 

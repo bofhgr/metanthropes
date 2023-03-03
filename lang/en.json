@@ -2,7 +2,6 @@
   "METANTHROPES.CharacteristicBody": "Body",
   "METANTHROPES.CharacteristicMind": "Mind",
   "METANTHROPES.CharacteristicSoul": "Soul",
-
   "METANTHROPES.StatPow": "Power",
   "METANTHROPES.StatEnd": "Endurance",
   "METANTHROPES.StatRef": "Reflexes",
@@ -12,11 +11,9 @@
   "METANTHROPES.StatWil": "Willpower",
   "METANTHROPES.StatCon": "Consciousness",
   "METANTHROPES.StatAwa": "Awareness",
-
   "METANTHROPES.CharacteristicBodyAbbr": "body",
   "METANTHROPES.CharacteristicMindAbbr": "mind",
   "METANTHROPES.CharacteristicSoulAbbr": "soul",
-
   "METANTHROPES.StatPowAbbr": "pow",
   "METANTHROPES.StatEndAbbr": "end",
   "METANTHROPES.StatRefAbbr": "ref",
@@ -26,12 +23,10 @@
   "METANTHROPES.StatWilAbbr": "wil",
   "METANTHROPES.StatConAbbr": "con",
   "METANTHROPES.StatAwaAbbr": "awa",
-
   "METANTHROPES.EffectCreate": "Create Effect",
   "METANTHROPES.EffectToggle": "Toggle Effect",
   "METANTHROPES.EffectEdit": "Edit Effect",
   "METANTHROPES.EffectDelete": "Delete Effect",
-
   "METANTHROPES.Add": "Add",
   "METANTHROPES.actorplaceholdername": "Metanthropes Actor Name Placeholder",
   "METANTHROPES.NewItemTest": "New {itemType}"

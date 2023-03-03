@@ -192,7 +192,7 @@ export class MetanthropesActorSheet extends ActorSheet {
     // Initialize a default name.
     // qp removing this to add localization const name = `New ${type.capitalize()}`;
     // see https://foundryvtt.wiki/en/development/guides/SD-tutorial/SD13-Localization for quick reference
-    const name = game.i18n.format(METANTHROPES.NewItemTest, {itemType: type.capitalize()});
+    const name = game.i18n.format(METANTHROPES.NewItemTest, { itemType: type.capitalize() });
     // Prepare the item object.
     const itemData = {
       name: name,
