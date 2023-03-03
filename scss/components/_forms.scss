@@ -42,6 +42,10 @@
 .sheet-body .tab,
 .sheet-body .tab .editor {
   height: 100%;
+  //qp adding background image to the body
+  background-image: url("../artwork/bg-sheet.jpg");
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .tox {
