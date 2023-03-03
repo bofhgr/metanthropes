@@ -16,7 +16,9 @@
             "template1": {
                 "attribute1": {
                     "initial": 0,
-                    "progressed": 0
+                    "progressed": 0,
+                    "effects": 0,
+                    "current": 0
                 }
             }
         }

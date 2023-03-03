@@ -14,39 +14,39 @@ import { METANTHROPES } from "./helpers/config.mjs";
 
 Hooks.once('init', async function () {
 
-  // Add utility classes to the global game object so that they're more easily
-  // accessible in global contexts.
-  game.metanthropes = {
-    MetanthropesActor,
-    MetanthropesItem,
-    rollItemMacro
-  };
+    // Add utility classes to the global game object so that they're more easily
+    // accessible in global contexts.
+    game.metanthropes = {
+        MetanthropesActor,
+        MetanthropesItem,
+        rollItemMacro
+    };
 
-  // Add custom constants for configuration.
-  CONFIG.METANTHROPES = METANTHROPES;
+    // Add custom constants for configuration.
+    CONFIG.METANTHROPES = METANTHROPES;
 
-  /**
-   * Set an initiative formula for the system
-   * @type {String}
-   */
-  CONFIG.Combat.initiative = {
-    //    formula: "1d100 + @abilities.dex.mod", testing this to see what happens - ideally I want to be able to call my initiative 'formula' from here
-    formula: "1d100 - @stats.ref.value",
-    decimals: 2
-  };
+    /**
+     * Set an initiative formula for the system
+     * @type {String}
+     */
+    CONFIG.Combat.initiative = {
+        //    formula: "1d100 + @abilities.dex.mod", testing this to see what happens - ideally I want to be able to call my initiative 'formula' from here
+        formula: "1d100 - @stats.ref.value",
+        decimals: 2
+    };
 
-  // Define custom Document classes
-  CONFIG.Actor.documentClass = MetanthropesActor;
-  CONFIG.Item.documentClass = MetanthropesItem;
+    // Define custom Document classes
+    CONFIG.Actor.documentClass = MetanthropesActor;
+    CONFIG.Item.documentClass = MetanthropesItem;
 
-  // Register sheet application classes
-  Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("metanthropes", MetanthropesActorSheet, { makeDefault: true });
-  Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("metanthropes", MetanthropesItemSheet, { makeDefault: true });
+    // Register sheet application classes
+    Actors.unregisterSheet("core", ActorSheet);
+    Actors.registerSheet("metanthropes", MetanthropesActorSheet, { makeDefault: true });
+    Items.unregisterSheet("core", ItemSheet);
+    Items.registerSheet("metanthropes", MetanthropesItemSheet, { makeDefault: true });
 
-  // Preload Handlebars templates.
-  return preloadHandlebarsTemplates();
+    // Preload Handlebars templates.
+    return preloadHandlebarsTemplates();
 });
 
 /* -------------------------------------------- */
@@ -59,17 +59,17 @@ Hooks.once('init', async function () {
 
 // If you need to add Handlebars helpers, here are a few useful examples:
 Handlebars.registerHelper('concat', function () {
-  var outStr = '';
-  for (var arg in arguments) {
-    if (typeof arguments[arg] != 'object') {
-      outStr += arguments[arg];
+    var outStr = '';
+    for (var arg in arguments) {
+        if (typeof arguments[arg] != 'object') {
+            outStr += arguments[arg];
+        }
     }
-  }
-  return outStr;
+    return outStr;
 });
 
 Handlebars.registerHelper('toLowerCase', function (str) {
-  return str.toLowerCase();
+    return str.toLowerCase();
 });
 
 /* -------------------------------------------- */
@@ -77,8 +77,8 @@ Handlebars.registerHelper('toLowerCase', function (str) {
 /* -------------------------------------------- */
 
 Hooks.once("ready", async function () {
-  // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
-  Hooks.on("hotbarDrop", (bar, data, slot) => createItemMacro(data, slot));
+    // Wait to register hotbar drop hook on ready so that modules could register earlier if they want to
+    Hooks.on("hotbarDrop", (bar, data, slot) => createItemMacro(data, slot));
 });
 
 /* -------------------------------------------- */
@@ -93,28 +93,28 @@ Hooks.once("ready", async function () {
  * @returns {Promise}
  */
 async function createItemMacro(data, slot) {
-  // First, determine if this is a valid owned item.
-  if (data.type !== "Item") return;
-  if (!data.uuid.includes('Actor.') && !data.uuid.includes('Token.')) {
-    return ui.notifications.warn("You can only create macro buttons for owned Items");
-  }
-  // If it is, retrieve it based on the uuid.
-  const item = await Item.fromDropData(data);
+    // First, determine if this is a valid owned item.
+    if (data.type !== "Item") return;
+    if (!data.uuid.includes('Actor.') && !data.uuid.includes('Token.')) {
+        return ui.notifications.warn("You can only create macro buttons for owned Items");
+    }
+    // If it is, retrieve it based on the uuid.
+    const item = await Item.fromDropData(data);
 
-  // Create the macro command using the uuid.
-  const command = `game.metanthropes.rollItemMacro("${data.uuid}");`;
-  let macro = game.macros.find(m => (m.name === item.name) && (m.command === command));
-  if (!macro) {
-    macro = await Macro.create({
-      name: item.name,
-      type: "script",
-      img: item.img,
-      command: command,
-      flags: { "metanthropes.itemMacro": true }
-    });
-  }
-  game.user.assignHotbarMacro(macro, slot);
-  return false;
+    // Create the macro command using the uuid.
+    const command = `game.metanthropes.rollItemMacro("${data.uuid}");`;
+    let macro = game.macros.find(m => (m.name === item.name) && (m.command === command));
+    if (!macro) {
+        macro = await Macro.create({
+            name: item.name,
+            type: "script",
+            img: item.img,
+            command: command,
+            flags: { "metanthropes.itemMacro": true }
+        });
+    }
+    game.user.assignHotbarMacro(macro, slot);
+    return false;
 }
 
 /**
@@ -123,20 +123,20 @@ async function createItemMacro(data, slot) {
  * @param {string} itemUuid
  */
 function rollItemMacro(itemUuid) {
-  // Reconstruct the drop data so that we can load the item.
-  const dropData = {
-    type: 'Item',
-    uuid: itemUuid
-  };
-  // Load the item from the uuid.
-  Item.fromDropData(dropData).then(item => {
-    // Determine if the item loaded and if it's an owned item.
-    if (!item || !item.parent) {
-      const itemName = item?.name ?? itemUuid;
-      return ui.notifications.warn(`Could not find item ${itemName}. You may need to delete and recreate this macro.`);
-    }
+    // Reconstruct the drop data so that we can load the item.
+    const dropData = {
+        type: 'Item',
+        uuid: itemUuid
+    };
+    // Load the item from the uuid.
+    Item.fromDropData(dropData).then(item => {
+        // Determine if the item loaded and if it's an owned item.
+        if (!item || !item.parent) {
+            const itemName = item?.name ?? itemUuid;
+            return ui.notifications.warn(`Could not find item ${itemName}. You may need to delete and recreate this macro.`);
+        }
 
-    // Trigger the item roll
-    item.roll();
-  });
+        // Trigger the item roll
+        item.roll();
+    });
 }
