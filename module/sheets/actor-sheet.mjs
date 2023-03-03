@@ -102,7 +102,7 @@ export class MetanthropesActorSheet extends ActorSheet {
       2: [],
       3: [],
       4: [],
-      5: [],
+      5: []
     };
 
     // Iterate through items, allocating to containers
