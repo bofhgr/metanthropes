@@ -38,16 +38,19 @@
     flex: 0;
 }
 
-.sheet-body,
-.sheet-body .tab,
-.sheet-body .tab .editor {
-    height: 100%;
+.sheet-body {
     //qp adding background image to the body
     background-image: url("../artwork/bg-sheet.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     opacity: 0.2;
+}
+
+.sheet-body,
+.sheet-body .tab,
+.sheet-body .tab .editor {
+    height: 100%;
     font-family: $font-secondary;
 }
 
