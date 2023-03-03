@@ -79,7 +79,7 @@ export class MetanthropesActor extends Actor {
             // ability.mod = Math.floor((ability.value - 10) / 2);
             //den to exei parei mallon kati allo paizei
             // edw mallon einai poy to xanei me kathe anoigma tou cs sto client kai allazoune ta noumera
-            stat.qp = Math.sum(stat.key.value, characteristics.body.value);
+            stat.qp = Math.sum(key.value, characteristics.body.value);
 			console.log(stat.qp);
         }
     }
