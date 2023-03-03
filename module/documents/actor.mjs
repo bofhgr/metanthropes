@@ -17,6 +17,13 @@ export class MetanthropesActor extends Actor {
     prepareBaseData() {
         // Data modifications in this step occur before processing embedded
         // documents or derived data.
+		//todo: qp preparing for template switch
+		// for (let ch of Object.values(this.charstats)) {
+		// 	for (let st of Object.values(this.ch.charstats)) {
+		// 		st.base = Math.sum(st.initial, st.progressed, ch.initial, ch.progressed);
+		// console.log(st.base);
+		// 	}
+		// }
     }
 
     /**
@@ -42,6 +49,10 @@ export class MetanthropesActor extends Actor {
         // things organized.
         this._prepareCharacterData(actorData);
         this._prepareNpcData(actorData);
+		//todo: qp preparing for template switch
+		//this._prepareHumanData(actorData);
+		//this._prepareMetanthropeData(actorData);
+		//this._prepareProtagonistData(actorData);
     }
 
     /**
@@ -49,17 +60,26 @@ export class MetanthropesActor extends Actor {
      */
     _prepareCharacterData(actorData) {
         if (actorData.type !== 'character') return;
+		//todo: qp preparing for template switch
+		// should this not start with a capital P?
+		//if (actorData.type !== 'Protagonist') return;
 
         // Make modifications to data here. For example:
         const systemData = actorData.system;
 
         // Loop through ability scores, and add their modifiers to our sheet output.
+		//todo: qp preparing for template switch
+		// I need to figure out how to make it so that here calculates the .current as the + body etc
+		// for (let [key, ability] of Object.entries(systemData.abilities)) {
+		//
+		//
+		//
         for (let [key, stat] of Object.entries(systemData.stats)) {
             // Calculate the modifier using d20 rules. qp this could be how to add bodyetc to stats
             // ability.mod = Math.floor((ability.value - 10) / 2);
             //den to exei parei mallon kati allo paizei
             // edw mallon einai poy to xanei me kathe anoigma tou cs sto client kai allazoune ta noumera
-            stat.qp = Math.floor((stat.value - 10) / 2);
+            stat.qp = Math.sum(stat.key.value, characteristics.body.value);
         }
     }
 
@@ -68,6 +88,10 @@ export class MetanthropesActor extends Actor {
      */
     _prepareNpcData(actorData) {
         if (actorData.type !== 'npc') return;
+		//todo: qp preparing for template switch
+		//if (actorData.type !== 'Human') return;
+		//if (actorData.type !== 'Metanthrope') return;
+		// should I nest these two together? what does this do exactly?
 
         // Make modifications to data here. For example:
         const systemData = actorData.system;
@@ -81,6 +105,11 @@ export class MetanthropesActor extends Actor {
         const data = super.getRollData();
 
         // Prepare character roll data.
+		//todo: qp preparing for template switch
+		//this._prepareHumanRollData(data);
+		//this._prepareMetanthropeRollData(data);
+		//this._prepareProtagonistRollData(data);
+		//todo: I need to do the _getCharacterRollData changes below
         this._getCharacterRollData(data);
         this._getNpcRollData(data);
 
@@ -95,6 +124,7 @@ export class MetanthropesActor extends Actor {
 
         // Copy the ability scores to the top level, so that rolls can use
         // formulas like `@str.mod + 4`.
+		//todo: qp preparing for template switch
         if (data.stats) {
             for (let [k, v] of Object.entries(data.stats)) {
                 data[k] = foundry.utils.deepClone(v);

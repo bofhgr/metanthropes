@@ -1,40 +1,301 @@
 {
-    "Actor": {
-        "types": [
-            "Human",
-            "Metanthrope",
-            "Protagonist",
-            "MetaTherion",
-            "Extra-Terrestrial",
-            "Extra-Dimensional",
-            "Animal",
-            "Artificial",
-            "Vehicle",
-            "Animated Object"
-        ],
-        "templates": {
-            "template1": {
-                "attribute1": {
-                    "initial": 0,
-                    "progressed": 0,
-                    "effects": 0,
-                    "current": 0
-                }
-            }
-        }
-    },
-    "Item": {
-        "types": [
-            "type1",
-            "type2"
-        ],
-        "templates": {
-            "template1": {
-                "attribute1": {
-                    "initial": 0,
-                    "progressed": 0
-                }
-            }
-        }
-    }
+	"Actor": {
+		"types": [
+			"Human",
+			"Metanthrope",
+			"Protagonist"
+		],
+		"templates": {
+			"common": {
+				"movement": {
+					"type": "number",
+					"label": "Movement",
+					"initial": 0,
+					"effects": 0,
+					"current": 0
+				},
+				"size": {
+					"type": "number",
+					"label": "Size",
+					"initial": 0,
+					"effects": 0,
+					"current": 0
+				},
+				"weight": {
+					"type": "number",
+					"label": "Weight",
+					"initial": 0,
+					"effects": 0,
+					"current": 0
+				},
+				"speed": {
+					"type": "number",
+					"label": "Speed",
+					"initial": 0,
+					"effects": 0,
+					"current": 0
+				},
+				"resistances": {
+					"type": "string",
+					"label": "Resistances",
+					"value": "none"
+				},
+				"immunities": {
+					"type": "string",
+					"label": "Immunities",
+					"value": "none"
+				},
+				"detection": {
+					"type": "string",
+					"label": "Detection",
+					"value": "none"
+				},
+				"shift": {
+					"type": "string",
+					"label": "Shift",
+					"value": "none"
+				},
+				"cover": {
+					"type": "number",
+					"label": "Cover",
+					"initial": 0,
+					"effects": 0,
+					"current": 0
+				},
+				"description": {
+					"type": "string",
+					"label": "Description",
+					"value": "common template description"
+				}
+			},
+			"charstats": {
+				"body": {
+					"type": "number",
+					"label": "Body",
+					"initial": 30,
+					"progressed": 0,
+					"effects": 0,
+					"current": 0,
+					"power": {
+						"type": "number",
+						"label": "Power",
+						"initial": 30,
+						"progressed": 0,
+						"effects": 0,
+						"current": 0
+					},
+					"endurance": {
+						"type": "number",
+						"label": "Endurance",
+						"initial": 20,
+						"progressed": 0,
+						"effects": 0,
+						"current": 0
+					},
+					"reflexes": {
+						"type": "number",
+						"label": "Reflexes",
+						"initial": 10,
+						"progressed": 0,
+						"effects": 0,
+						"current": 0
+					}
+				},
+				"mind": {
+					"type": "number",
+					"label": "Mind",
+					"initial": 20,
+					"progressed": 0,
+					"effects": 0,
+					"current": 0,
+					"creativity": {
+						"type": "number",
+						"label": "Creativity",
+						"initial": 30,
+						"progressed": 0,
+						"effects": 0,
+						"current": 0
+					},
+					"manipulation": {
+						"type": "number",
+						"label": "Manipulation",
+						"initial": 20,
+						"progressed": 0,
+						"effects": 0,
+						"current": 0
+					},
+					"perception": {
+						"type": "number",
+						"label": "Perception",
+						"initial": 10,
+						"progressed": 0,
+						"effects": 0,
+						"current": 0
+					}
+				},
+				"soul": {
+					"type": "number",
+					"label": "Soul",
+					"initial": 10,
+					"progressed": 0,
+					"effects": 0,
+					"current": 0,
+					"willpower": {
+						"type": "number",
+						"label": "Willpower",
+						"initial": 30,
+						"progressed": 0,
+						"effects": 0,
+						"current": 0
+					},
+					"consciousness": {
+						"type": "number",
+						"label": "Conciousness",
+						"initial": 20,
+						"progressed": 0,
+						"effects": 0,
+						"current": 0
+					},
+					"awareness": {
+						"type": "number",
+						"label": "Awareness",
+						"initial": 10,
+						"progressed": 0,
+						"effects": 0,
+						"current": 0
+					}
+				}
+			},
+			"humanoid": {
+				"Experience": {
+					"type": "number",
+					"label": "Experience",
+					"total": 0,
+					"spent": 0,
+					"stored": 0
+				},
+				"species": {
+					"type": "string",
+					"label": "Species",
+					"value": "Human"
+				},
+				"gender": {
+					"type": "string",
+					"label": "Gender",
+					"value": "Other"
+				},
+				"birthplace": {
+					"type": "string",
+					"label": "Birthplace",
+					"value": "Random City"
+				},
+				"age": {
+					"type": "number",
+					"label": "Age",
+					"value": 25
+				},
+				"arc": {
+					"type": "string",
+					"label": "Arc",
+					"value": "None"
+				},
+				"life": {
+					"type": "number",
+					"label": "Life",
+					"value": 100,
+					"max": 0
+				},
+				"destiny": {
+					"type": "number",
+					"label": "Destiny",
+					"value": 20,
+					"max": 0
+				},
+				"physicaldescription": {
+					"type": "string",
+					"label": "Physical Description",
+					"value": "A typical human with brown hair and blue eyes."
+				}
+			},
+			"entermeta": {
+				"metamorphosis": {
+					"type": "string",
+					"label": "Metamorphosis",
+					"value": "some metamorphosis"
+				},
+				"regression": {
+					"type": "string",
+					"label": "Regression",
+					"value": "some regression"
+				},
+				"primemetapower": {
+					"type": "string",
+					"label": "Primary Metapower",
+					"value": "your Prime metapower"
+				},
+				"sagas": {
+					"type": "string",
+					"label": "Sagas",
+					"value": "sagas you have been in"
+				},
+				"coalition": {
+					"type": "string",
+					"label": "Coalition",
+					"value": "Player coalition you are a member of"
+				}
+			}
+		},
+		"Human": {
+			"templates": [
+				"common",
+				"charstats",
+				"humanoid"
+			],
+			"metaowner": {
+				"type": "string",
+				"label": "Metaowner",
+				"value": "NPC"
+			}
+		},
+		"Metanthrope": {
+			"templates": [
+				"common",
+				"charstats",
+				"humanoid",
+				"entermeta"
+			],
+			"metaowner": {
+				"type": "string",
+				"label": "Metaowner",
+				"value": "NPC"
+			}
+		},
+		"Protagonist": {
+			"templates": [
+				"common",
+				"charstats",
+				"humanoid",
+				"entermeta"
+			],
+			"metaowner": {
+				"type": "string",
+				"label": "Metaowner",
+				"value": "Select a Protagonist"
+			}
+		}
+	},
+	"Item": {
+		"types": [
+			"type1",
+			"type2"
+		],
+		"templates": {
+			"template1": {
+				"attribute1": {
+					"initial": 0,
+					"progressed": 0
+				}
+			}
+		}
+	}
 }
