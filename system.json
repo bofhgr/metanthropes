@@ -1,8 +1,8 @@
 {
     "id": "metanthropes",
-    "title": "Metanthropes",
+    "title": "Metanthropes RPG",
     "description": "This is the official Metanthropes RPG system for FoundryVTT",
-    "version": "0.6.13",
+    "version": "0.6.14",
     "compatibility": {
         "minimum": 10,
         "verified": "10.291",

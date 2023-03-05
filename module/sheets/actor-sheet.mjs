@@ -27,6 +27,7 @@ export class MetanthropesActorSheet extends ActorSheet {
 
 	/** @override */
 	get template() {
+		//todo: qp preparing for template switch
 		return `systems/metanthropes/templates/actor/actor-${this.actor.type}-sheet.html`;
 	}
 
@@ -79,6 +80,7 @@ export class MetanthropesActorSheet extends ActorSheet {
 	 * @return {undefined}
 	 */
 	_prepareCharacterData(context) {
+		//todo qp: preparing for template switch
 		// Handle ability scores.
 		for (let [k, v] of Object.entries(context.system.stats)) {
 			v.label = game.i18n.localize(CONFIG.METANTHROPES.stats[k]) ?? k;

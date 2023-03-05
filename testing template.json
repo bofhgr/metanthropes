@@ -1,12 +1,15 @@
 {
 	"Actor": {
 		"types": [
-			"Human",
+			"Humanoid",
 			"Metanthrope",
 			"Protagonist",
 			"Animal",
 			"MetaTherion",
-			"Artificial"
+			"Artificial",
+			"Animated Object",
+			"Animated Humanoid",
+			"Vehicle"
 		],
 		"templates": {
 			"physical": {
@@ -127,7 +130,7 @@
 						"label": "Material",
 						"initial": 0
 					},
-					"Psychic": {
+					"psychic": {
 						"type": "number",
 						"label": "Psychic",
 						"initial": 0
@@ -499,7 +502,7 @@
 					}
 				}
 			},
-			"humanoid": {
+			"humanoids": {
 				"hitbox": {
 					"head": {
 						"type": "number",
@@ -563,7 +566,65 @@
 					"value": "A typical human with brown hair and brown eyes."
 				}
 			},
-			"animalistic": {
+			"humanoid-perks": {
+				"perks": {
+					"knowledge": {
+						"academics": {
+							"type": "number",
+							"label": "Academics",
+							"value": 0
+						},
+						"engineering": {
+							"type": "number",
+							"label": "Engineering",
+							"value": 0
+						},
+						"lore": {
+							"type": "number",
+							"label": "Lore",
+							"value": 0
+						},
+						"medicine": {
+							"type": "number",
+							"label": "Medicine",
+							"value": 0
+						},
+						"science": {
+							"type": "number",
+							"label": "Science",
+							"value": 0
+						}
+					},
+					"skills": {
+						"artistry": {
+							"type": "number",
+							"label": "Artistry",
+							"value": 0
+						},
+						"athletics": {
+							"type": "number",
+							"label": "Athletics",
+							"value": 0
+						},
+						"expertise": {
+							"type": "number",
+							"label": "Expertise",
+							"value": 0
+						},
+						"operation": {
+							"type": "number",
+							"label": "Operation",
+							"value": 0
+						},
+						"weapons": {
+							"type": "number",
+							"label": "Weapons",
+							"value": 0
+						}
+					}
+				}
+			},
+			"animals": {
 				"hitbox": {
 					"head": {
 						"type": "number",
@@ -663,7 +724,7 @@
 				"life": {
 					"type": "number",
 					"label": "Durability",
-					"value": 100,
+					"value": 200,
 					"max": 0
 				},
 				"description-synthetic": {
@@ -705,12 +766,13 @@
 				}
 			}
 		},
-		"Human": {
+		"Humanoid": {
 			"templates": [
 				"physical",
 				"vital",
 				"characteristics",
-				"humanoid"
+				"humanoids",
+				"humanoid-perks"
 			],
 			"metaowner": {
 				"type": "string",
@@ -723,7 +785,8 @@
 				"physical",
 				"vital",
 				"characteristics",
-				"humanoid",
+				"humanoids",
+				"humanoid-perks",
 				"entermeta"
 			],
 			"metaowner": {
@@ -737,7 +800,8 @@
 				"physical",
 				"vital",
 				"characteristics",
-				"humanoid",
+				"humanoids",
+				"humanoid-perks",
 				"entermeta"
 			],
 			"metaowner": {
@@ -761,7 +825,7 @@
 				"physical",
 				"vital",
 				"characteristics",
-				"animalistic"
+				"animals"
 			],
 			"metaowner": {
 				"type": "string",
@@ -774,7 +838,7 @@
 				"physical",
 				"vital",
 				"characteristics",
-				"animalistic",
+				"animals",
 				"entermeta"
 			],
 			"metaowner": {
@@ -795,6 +859,41 @@
 				"label": "Metaowner",
 				"value": "NPC"
 			}
+		},
+		"Animated Object": {
+			"templates": [
+				"physical"
+			],
+			"metaowner": {
+				"type": "string",
+				"label": "Metaowner",
+				"value": "NPC"
+			}
+		},
+		"Animated Humanoid": {
+			"templates": [
+				"physical",
+				"vital",
+				"characteristics",
+				"humanoids",
+				"humanoid-perks"
+			],
+			"metaowner": {
+				"type": "string",
+				"label": "Metaowner",
+				"value": "NPC"
+			}
+		},
+		"Vehicle": {
+			"templates": [
+				"physical",
+				"synthetic"
+			],
+			"metaowner": {
+				"type": "string",
+				"label": "Metaowner",
+				"value": "NPC"
+			}
 		}
 	},
 	"Item": {
@@ -802,8 +901,7 @@
 			"Object",
 			"Possession",
 			"Metapower",
-			"Combo",
-			"Perk"
+			"Combo"
 		],
 		"templates": {
 			"material": {
@@ -814,8 +912,8 @@
 				},
 			"description-material": {
 					"type": "string",
-					"label": "Material Description",
-					"value": "some material description"
+					"label": "Material Properties",
+					"value": "some material properties"
 				}
 			},
 			"metabase": {
@@ -823,40 +921,115 @@
 					"type": "string",
 					"label": "Clasification",
 					"value": "some clasification"
-				}
-			},
-			"humanoid-perks": {
-				"perk": {
+				},
+				"level": {
 					"type": "string",
-					"label": "Perk",
-					"value": "some perk"
+					"label": "Level",
+					"value": "some level"
+				},
+				"statrolled": {
+					"type": "string",
+					"label": "Stat Rolled",
+					"value": "some stat rolled"
+				},
+				"metapowername": {
+					"type": "string",
+					"label": "Metapower Name",
+					"value": "some metapower name"
+				},
+				"energytype": {
+					"type": "string",
+					"label": "Energy Type",
+					"value": "some energy type"
+				},
+				"activation": {
+					"type": "string",
+					"label": "Activation",
+					"value": "some activation"
+				},
+				"targets": {
+					"type": "string",
+					"label": "Targets",
+					"value": "some targets"
+				},
+				"range": {
+					"type": "string",
+					"label": "Range",
+					"value": "some range"
+				},
+				"duration": {
+					"type": "string",
+					"label": "Duration",
+					"value": "some duration"
+				},
+				"effect": {
+					"type": "string",
+					"label": "Effect",
+					"value": "some effect"
+				},
+				"description-metabase": {
+					"type": "string",
+					"label": "Metabase Notes",
+					"value": "some metabase notes"
 				}
 			}
 		},
 		"Object": {
 			"templates": [
 				"material"
-			]
+			],
+			"description-object": {
+				"type": "string",
+				"label": "Object Description",
+				"value": "some object description"
+			}
 		},
 		"Possession": {
 			"templates": [
 				"material"
-			]
+			],
+			"category": {
+				"armor": {
+					"type": "string",
+					"label": "Armor",
+					"value": "some armor"
+				},
+				"weapon": {
+					"type": "string",
+					"label": "Weapon",
+					"value": "some weapon"
+				},
+				"gadget": {
+					"type": "string",
+					"label": "Gadget",
+					"value": "some gadget"
+				},
+				"drug": {
+					"type": "string",
+					"label": "Drug",
+					"value": "some drug"
+				}
+			}
 		},
 		"Metapower": {
 			"templates": [
 				"metabase"
-			]
+			],
+			"description-metapower": {
+				"type": "string",
+				"label": "Metapower Description",
+				"value": "some metapower description"
+			}
 		},
 		"Combo": {
 			"templates": [
 				"metabase"
-			]
-		},
-		"Perk": {
-			"templates": [
-				"humanoid-perks"
-			]
+			],
+			"description-combo": {
+				"type": "string",
+				"label": "Combos Description",
+				"value": "Combos are not officially supported yet. This is a placeholder for future capabilities."
+			}
 		}
 	}
 }
