@@ -24,6 +24,7 @@ export class MetanthropesActor extends Actor {
 		// console.log(st.base);
 		// 	}
 		// }
+		//todo: as poyme edw tha ftiaksw to base attribute poy tha einai to initial+progressed
 	}
 
 	/**
@@ -39,6 +40,9 @@ export class MetanthropesActor extends Actor {
 	 * this is where we add the body etc to the stats
 	 * here we should also add the modifiers see above
 	 * copilot go?
+	 * 
+	 * todo enw edw tha einai as poyme to base + conditions + buffs
+	 * 
 	 */
 	prepareDerivedData() {
 		const actorData = this;
@@ -53,6 +57,10 @@ export class MetanthropesActor extends Actor {
 		//this._prepareHumanData(actorData);
 		//this._prepareMetanthropeData(actorData);
 		//this._prepareProtagonistData(actorData);
+		//this._prepareMetaTherionData(actorData);
+		//this._prepareAnimalData(actorData);
+		//this._prepareArtificialData(actorData);
+
 	}
 
 	/**
@@ -90,7 +98,11 @@ _prepareNpcData(actorData) {
 	//todo: qp preparing for template switch
 	//if (actorData.type !== 'Human') return;
 	//if (actorData.type !== 'Metanthrope') return;
-	// should I nest these two together? what does this do exactly?
+	//if (actorData.type !== 'Animal') return;
+	//if (actorData.type !== 'Artificial') return;
+	//if (actorData.type !== 'MetaTherion') return;
+
+	// should I nest these --- together? what does this do exactly?
 
 	// Make modifications to data here. For example:
 	const systemData = actorData.system;
@@ -108,6 +120,10 @@ getRollData() {
 	//this._prepareHumanRollData(data);
 	//this._prepareMetanthropeRollData(data);
 	//this._prepareProtagonistRollData(data);
+	//this._prepareMetaTherionRollData(data);
+	//this._prepareAnimalRollData(data);
+	//this._prepareArtificialRollData(data);
+
 	//todo: I need to do the _getCharacterRollData changes below
 	this._getCharacterRollData(data);
 	this._getNpcRollData(data);

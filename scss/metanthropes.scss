@@ -20,3 +20,7 @@
     @import "components/items";
     @import "components/effects";
 }
+
+// when creating classes for use with divs etc, use two types: one for layout and one for content
+// one will be used for figuring out the layout of the page, the other for the content style (colors etc) , maybe a third for the typography (fonts etc)
+//

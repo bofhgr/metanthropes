@@ -47,12 +47,15 @@ export class MetanthropesActorSheet extends ActorSheet {
 		context.system = actorData.system;
 		context.flags = actorData.flags;
 
+
+		//todo qp: preparing for template switch
 		// Prepare character data and items.
 		if (actorData.type == "character") {
 			this._prepareItems(context);
 			this._prepareCharacterData(context);
 		}
 
+		//todo qp: preparing for template switch
 		// Prepare NPC data and items.
 		if (actorData.type == "npc") {
 			this._prepareItems(context);
