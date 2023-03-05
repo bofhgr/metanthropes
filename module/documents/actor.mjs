@@ -80,14 +80,14 @@ export class MetanthropesActor extends Actor {
 		//
 		//
 		//the below is broken
-		//for (let [key, stat] of Object.entries(systemData.stats)) {
+		for (let [key, stat] of Object.entries(systemData.stats)) {
 		// Calculate the modifier using d20 rules. qp this could be how to add bodyetc to stats
 		// ability.mod = Math.floor((ability.value - 10) / 2);
 		//den to exei parei mallon kati allo paizei
 		// edw mallon einai poy to xanei me kathe anoigma tou cs sto client kai allazoune ta noumera
-		//    stat.qp = Math.sum(key.value, characteristics.body.value);
-		//	console.log(stat.qp);
-	//}
+			stat.qp = Math.sum(stats.key.value, characteristics.body.value);
+			console.log(stat.qp);
+	}
 }
 
 /**
@@ -139,7 +139,9 @@ _getCharacterRollData(data) {
 
 	// Copy the ability scores to the top level, so that rolls can use
 	// formulas like `@str.mod + 4`.
-	//todo: qp preparing for template switch
+	//todo: qp preparing for template switch - or not? maybe this section is not needed????
+	//? is this where the numbering bug is coming from?
+	//! test this
 	if (data.stats) {
 		for (let [k, v] of Object.entries(data.stats)) {
 			data[k] = foundry.utils.deepClone(v);
